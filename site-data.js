@@ -57,6 +57,33 @@ window.siteData = {
   ],
   projects: [
     {
+      title: 'OpenClaw 具身智能小车',
+      period: '2025.04 - 2026.04',
+      summary: '云端大模型与边缘端履带式小车协同工作的农业具身智能平台。',
+      description:
+        'OpenClaw 将云端大模型、树莓派、履带式底盘、二自由度云台和相机整合进一个具备“移动-观测-决策”闭环的系统。我为它引入 MCP 与 skill 机制，让小车能力可以被结构化调用，并支持可变拓扑设计，即使部分能力基座离线，整体服务依然能够继续运行。',
+      tags: ['Embodied AI', 'Raspberry Pi', 'MCP', 'Agricultural Robotics'],
+      cover: {
+        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
+        alt: 'OpenClaw 小车封面图'
+      },
+      links: [
+        {
+          label: 'Video',
+          href: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6.mp4'
+        }
+      ],
+      media: [
+        {
+          type: 'video',
+          src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6.mp4',
+          poster:
+            'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
+          caption: 'OpenClaw 演示视频，展示农业场景中的移动、观测与决策联动。'
+        }
+      ]
+    },
+    {
       title: 'DiffCorn-Fusion',
       period: '2025.01 - 至今',
       summary: '高通量、低成本的玉米单视图表型检测与结构化表示方法。',
@@ -183,33 +210,6 @@ window.siteData = {
           src: './assets/projects/mentordb/profile-view.png',
           alt: 'MentorDB 导师档案截图',
           caption: '导师档案页提供可追溯来源与结构化信息。'
-        }
-      ]
-    },
-    {
-      title: 'OpenClaw 具身智能小车',
-      period: '2025.04 - 2026.04',
-      summary: '云端大模型与边缘端履带式小车协同工作的农业具身智能平台。',
-      description:
-        'OpenClaw 将云端大模型、树莓派、履带式底盘、二自由度云台和相机整合进一个具备“移动-观测-决策”闭环的系统。我为它引入 MCP 与 skill 机制，让小车能力可以被结构化调用，并支持可变拓扑设计，即使部分能力基座离线，整体服务依然能够继续运行。',
-      tags: ['Embodied AI', 'Raspberry Pi', 'MCP', 'Agricultural Robotics'],
-      cover: {
-        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
-        alt: 'OpenClaw 小车封面图'
-      },
-      links: [
-        {
-          label: 'Video',
-          href: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6.mp4'
-        }
-      ],
-      media: [
-        {
-          type: 'video',
-          src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6.mp4',
-          poster:
-            'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
-          caption: 'OpenClaw 演示视频，展示农业场景中的移动、观测与决策联动。'
         }
       ]
     }

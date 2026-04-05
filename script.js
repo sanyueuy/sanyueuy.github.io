@@ -231,8 +231,10 @@ const closeLightbox = () => {
   lightboxImage.removeAttribute('alt');
   lightboxVideo.hidden = true;
   lightboxVideo.pause();
+  lightboxVideo.currentTime = 0;
   lightboxVideo.removeAttribute('poster');
   lightboxVideo.innerHTML = '';
+  lightboxVideo.load();
   lightboxCaption.textContent = '';
   document.body.classList.remove('lightbox-open');
 };
@@ -252,6 +254,7 @@ const openLightbox = (button) => {
   if (kind === 'video') {
     lightboxImage.hidden = true;
     lightboxImage.removeAttribute('src');
+    lightboxImage.removeAttribute('alt');
     lightboxVideo.hidden = false;
     lightboxVideo.poster = button.dataset.poster || '';
     lightboxVideo.innerHTML = `<source src="${src}" type="video/mp4" />`;
@@ -261,8 +264,10 @@ const openLightbox = (button) => {
 
   lightboxVideo.hidden = true;
   lightboxVideo.pause();
+  lightboxVideo.currentTime = 0;
   lightboxVideo.removeAttribute('poster');
   lightboxVideo.innerHTML = '';
+  lightboxVideo.load();
   lightboxImage.hidden = false;
   lightboxImage.src = src;
   lightboxImage.alt = button.dataset.alt || '';

@@ -2,7 +2,7 @@ window.siteData = {
   profile: {
     name: '吴洪',
     role: 'Embodied AI x AgriTech Builder',
-    affiliation: '中国农业大学工学院 · 具身智能与农业机器人研究中心',
+    affiliation: '中国农业大学工学院 · 具身智能与农业机器人研究中心 · 陈建教授课题组',
     subtitle:
       '把大模型、机器人、视觉系统和真实农业场景接起来的本科开发者，持续做能运行、能演示、能落地的作品。',
     description:

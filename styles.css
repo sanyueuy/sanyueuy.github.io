@@ -180,7 +180,6 @@ main {
   text-transform: uppercase;
 }
 
-.intro-subtitle,
 .prose-card p,
 #contactText,
 .project-item p,
@@ -191,39 +190,6 @@ main {
   font-size: 1rem;
   line-height: 1.86;
   color: var(--muted);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 12px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 150px;
-  padding: 13px 20px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button.primary {
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-}
-
-.button.ghost {
-  color: var(--accent-deep);
-  background: var(--accent-soft);
 }
 
 .feature-main,
@@ -245,7 +211,7 @@ main {
 
 .intro-card {
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
 .intro-name {
@@ -254,30 +220,6 @@ main {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height: 1;
   letter-spacing: -0.03em;
-}
-
-.intro-subtitle {
-  margin: 0;
-  color: var(--ink);
-  font-size: 1.04rem;
-  line-height: 1.75;
-}
-
-.intro-actions {
-  margin-top: 0;
-}
-
-.avatar-badge {
-  display: grid;
-  place-items: center;
-  width: 88px;
-  height: 88px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(22, 109, 99, 0.12), rgba(255, 244, 234, 0.96));
-  color: var(--accent-deep);
-  font-size: 1.86rem;
-  font-weight: 800;
-  box-shadow: inset 0 0 0 1px rgba(22, 109, 99, 0.12);
 }
 
 .meta-block {

@@ -76,12 +76,9 @@ const renderProjectMedia = (mediaItems, title) =>
     .join('');
 
 setText('brandName', data.profile.name);
-setText('heroRole', data.profile.role);
 setText('heroName', data.profile.name);
-setText('heroSubtitle', data.profile.subtitle);
 setText('heroAffiliation', data.profile.affiliation);
 setText('aboutText', data.profile.about);
-setText('avatarBadge', data.profile.initials);
 setText('contactText', data.profile.contactText);
 
 document.title = `${data.profile.name} | Academic Homepage`;
@@ -199,21 +196,6 @@ renderList(
   data.profile.contact,
   (item) => `<a href="${escapeHtml(item.href)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)}</a>`
 );
-
-const primaryLink = document.getElementById('primaryLink');
-const secondaryLink = document.getElementById('secondaryLink');
-
-if (primaryLink) {
-  primaryLink.href = '#projects';
-  primaryLink.textContent = '查看项目';
-}
-
-if (secondaryLink) {
-  secondaryLink.href = 'https://github.com/sanyueuy';
-  secondaryLink.textContent = '访问 GitHub';
-  secondaryLink.target = '_blank';
-  secondaryLink.rel = 'noreferrer';
-}
 
 const lightbox = document.getElementById('lightbox');
 const lightboxClose = document.getElementById('lightboxClose');

@@ -79,7 +79,6 @@ setText('brandName', data.profile.name);
 setText('heroRole', data.profile.role);
 setText('heroName', data.profile.name);
 setText('heroSubtitle', data.profile.subtitle);
-setText('heroDescription', data.profile.description);
 setText('heroAffiliation', data.profile.affiliation);
 setText('aboutText', data.profile.about);
 setText('avatarBadge', data.profile.initials);

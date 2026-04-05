@@ -119,7 +119,6 @@ main {
   gap: 30px;
 }
 
-.card-grid,
 .feature-layout,
 .two-column {
   display: grid;
@@ -137,8 +136,7 @@ main {
   gap: 6px;
 }
 
-.section-title h2,
-.hero-copy h1 {
+.section-title h2 {
   margin: 0;
   font-family: 'Noto Serif SC', serif;
   font-weight: 700;
@@ -182,24 +180,7 @@ main {
   text-transform: uppercase;
 }
 
-.hero-copy {
-  min-height: 320px;
-}
-
-.hero-copy h1 {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 0.98;
-  max-width: 9ch;
-}
-
-.hero-subtitle {
-  margin: 14px 0 10px;
-  font-size: 1.2rem;
-  line-height: 1.72;
-  color: var(--ink);
-}
-
-.hero-description,
+.intro-subtitle,
 .prose-card p,
 #contactText,
 .project-item p,
@@ -216,7 +197,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 12px;
 }
 
 .button {
@@ -245,18 +226,6 @@ main {
   background: var(--accent-soft);
 }
 
-.hero-panel {
-  display: grid;
-  align-content: start;
-  gap: 22px;
-}
-
-.hero-panel-copy {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
 .feature-main,
 .feature-side {
   display: grid;
@@ -277,6 +246,25 @@ main {
 .intro-card {
   display: grid;
   gap: 18px;
+}
+
+.intro-name {
+  margin: 0;
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.intro-subtitle {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.intro-actions {
+  margin-top: 0;
 }
 
 .avatar-badge {
@@ -592,8 +580,6 @@ main {
   font-size: 1.35rem;
 }
 
-.hero-copy,
-.hero-panel,
 .section-layout,
 .stack-item,
 .timeline-item,
@@ -603,10 +589,6 @@ main {
   opacity: 0;
   transform: translateY(22px);
   animation: riseIn 720ms ease forwards;
-}
-
-.hero-panel {
-  animation-delay: 120ms;
 }
 
 .section-layout:nth-of-type(2) {
@@ -634,7 +616,6 @@ main {
 
 @media (max-width: 980px) {
   .site-header,
-  .card-grid,
   .feature-layout,
   .two-column,
   .contact-section .card,
@@ -648,9 +629,6 @@ main {
     border-radius: 24px;
   }
 
-  .hero-copy h1 {
-    max-width: none;
-  }
 }
 
 @media (max-width: 640px) {

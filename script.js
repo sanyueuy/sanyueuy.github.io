@@ -25,6 +25,17 @@ const renderProjectMedia = (mediaItems, title) =>
       if (media.type === 'video') {
         return `
           <figure class="media-card media-card-video">
+            <button
+              class="media-expand"
+              type="button"
+              data-kind="video"
+              data-src="${escapeHtml(media.src)}"
+              data-poster="${escapeHtml(media.poster || '')}"
+              data-caption="${escapeHtml(media.caption || '')}"
+              aria-label="放大查看视频"
+            >
+              放大
+            </button>
             <video controls preload="metadata" playsinline poster="${escapeHtml(media.poster || '')}">
               <source src="${escapeHtml(media.src)}" type="video/mp4" />
               你的浏览器暂不支持视频播放。
@@ -46,6 +57,17 @@ const renderProjectMedia = (mediaItems, title) =>
 
       return `
         <figure class="media-card">
+          <button
+            class="media-expand"
+            type="button"
+            data-kind="image"
+            data-src="${escapeHtml(media.src)}"
+            data-alt="${escapeHtml(media.alt || title)}"
+            data-caption="${escapeHtml(media.caption || '')}"
+            aria-label="放大查看图片"
+          >
+            放大
+          </button>
           <img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt || title)}" loading="lazy" />
           <figcaption class="media-caption">${escapeHtml(media.caption || '')}</figcaption>
         </figure>
@@ -193,3 +215,77 @@ if (secondaryLink) {
   secondaryLink.target = '_blank';
   secondaryLink.rel = 'noreferrer';
 }
+
+const lightbox = document.getElementById('lightbox');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxVideo = document.getElementById('lightboxVideo');
+const lightboxCaption = document.getElementById('lightboxCaption');
+
+const closeLightbox = () => {
+  if (!lightbox || !lightboxImage || !lightboxVideo || !lightboxCaption) return;
+  lightbox.classList.remove('is-open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImage.hidden = true;
+  lightboxImage.removeAttribute('src');
+  lightboxImage.removeAttribute('alt');
+  lightboxVideo.hidden = true;
+  lightboxVideo.pause();
+  lightboxVideo.removeAttribute('poster');
+  lightboxVideo.innerHTML = '';
+  lightboxCaption.textContent = '';
+  document.body.classList.remove('lightbox-open');
+};
+
+const openLightbox = (button) => {
+  if (!lightbox || !lightboxImage || !lightboxVideo || !lightboxCaption) return;
+  const kind = button.dataset.kind;
+  const src = button.dataset.src;
+  const caption = button.dataset.caption || '';
+  if (!src) return;
+
+  lightbox.classList.add('is-open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  lightboxCaption.textContent = caption;
+  document.body.classList.add('lightbox-open');
+
+  if (kind === 'video') {
+    lightboxImage.hidden = true;
+    lightboxImage.removeAttribute('src');
+    lightboxVideo.hidden = false;
+    lightboxVideo.poster = button.dataset.poster || '';
+    lightboxVideo.innerHTML = `<source src="${src}" type="video/mp4" />`;
+    lightboxVideo.load();
+    return;
+  }
+
+  lightboxVideo.hidden = true;
+  lightboxVideo.pause();
+  lightboxVideo.removeAttribute('poster');
+  lightboxVideo.innerHTML = '';
+  lightboxImage.hidden = false;
+  lightboxImage.src = src;
+  lightboxImage.alt = button.dataset.alt || '';
+};
+
+document.addEventListener('click', (event) => {
+  const expandButton = event.target.closest('.media-expand');
+  if (expandButton) {
+    openLightbox(expandButton);
+    return;
+  }
+
+  if (
+    lightbox &&
+    lightbox.classList.contains('is-open') &&
+    (event.target === lightbox || event.target === lightboxClose)
+  ) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});

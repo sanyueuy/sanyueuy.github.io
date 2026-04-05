@@ -138,6 +138,15 @@
       </main>
     </div>
 
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="关闭预览">×</button>
+      <div class="lightbox-dialog">
+        <img class="lightbox-image" id="lightboxImage" alt="" hidden />
+        <video class="lightbox-video" id="lightboxVideo" controls playsinline hidden></video>
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+
     <script src="./site-data.js"></script>
     <script src="./script.js"></script>
   </body>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Homepage</title>
+    <meta
+      name="description"
+      content="个人学术主页，展示研究方向、论文成果、教学与联系信息。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif+SC:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">
+          <span class="brand-mark">A</span>
+          <span id="brandName">Academic</span>
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="#about">简介</a>
+          <a href="#research">研究</a>
+          <a href="#publications">论文</a>
+          <a href="#experience">经历</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero card-grid">
+          <div class="hero-copy card card-accent">
+            <p class="eyebrow" id="heroRole">Researcher</p>
+            <h1 id="heroName">你的姓名</h1>
+            <p class="hero-subtitle" id="heroSubtitle">
+              在这里写一句简洁而明确的研究定位，例如：关注人工智能、计算机视觉与人机交互。
+            </p>
+            <p class="hero-description" id="heroDescription"></p>
+            <div class="hero-actions">
+              <a id="primaryLink" class="button primary" href="#contact">联系我</a>
+              <a id="secondaryLink" class="button ghost" href="#publications">查看论文</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel card">
+            <div class="avatar-badge" id="avatarBadge">YS</div>
+            <div class="meta-block">
+              <p class="meta-label">Affiliation</p>
+              <p class="meta-value" id="heroAffiliation">你的学院 / 实验室 / 学校</p>
+            </div>
+            <div class="meta-block">
+              <p class="meta-label">Focus</p>
+              <ul class="tag-list" id="focusTags"></ul>
+            </div>
+            <div class="meta-block">
+              <p class="meta-label">Quick Links</p>
+              <div class="quick-links" id="quickLinks"></div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section-layout">
+          <div class="section-title">
+            <p class="eyebrow">About</p>
+            <h2 id="about">个人简介</h2>
+          </div>
+          <div class="card prose-card">
+            <p id="aboutText"></p>
+          </div>
+        </section>
+
+        <section class="section-layout two-column">
+          <div>
+            <div class="section-title">
+              <p class="eyebrow">Research</p>
+              <h2 id="research">研究方向</h2>
+            </div>
+            <div class="stack-list" id="researchList"></div>
+          </div>
+          <div>
+            <div class="section-title">
+              <p class="eyebrow">News</p>
+              <h2>近期动态</h2>
+            </div>
+            <div class="timeline-list" id="newsList"></div>
+          </div>
+        </section>
+
+        <section class="section-layout">
+          <div class="section-title">
+            <p class="eyebrow">Projects</p>
+            <h2 id="projects">项目展示</h2>
+          </div>
+          <div class="project-list" id="projectList"></div>
+        </section>
+
+        <section class="section-layout">
+          <div class="section-title">
+            <p class="eyebrow">Selected Works</p>
+            <h2 id="publications">代表性论文</h2>
+          </div>
+          <div class="publication-list" id="publicationList"></div>
+        </section>
+
+        <section class="section-layout two-column">
+          <div>
+            <div class="section-title">
+              <p class="eyebrow">Experience</p>
+              <h2 id="experience">教育与工作经历</h2>
+            </div>
+            <div class="timeline-list" id="experienceList"></div>
+          </div>
+          <div>
+            <div class="section-title">
+              <p class="eyebrow">Service</p>
+              <h2>教学与服务</h2>
+            </div>
+            <div class="stack-list" id="serviceList"></div>
+          </div>
+        </section>
+
+        <section class="section-layout contact-section">
+          <div class="section-title">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact">联系与合作</h2>
+          </div>
+          <div class="card contact-card">
+            <div>
+              <p class="contact-heading">欢迎交流</p>
+              <p id="contactText">
+                如果你对研究合作、学生交流、课程建设或项目合作感兴趣，欢迎通过以下方式联系我。
+              </p>
+            </div>
+            <div class="contact-links" id="contactLinks"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./site-data.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

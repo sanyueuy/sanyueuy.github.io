@@ -1,146 +1,254 @@
 window.siteData = {
   profile: {
-    name: '你的姓名',
-    role: 'Assistant Professor / PhD Candidate / Researcher',
-    affiliation: '你的院系 / 实验室 / 学校名称',
-    subtitle: '研究兴趣可写成一句清晰的定位，例如：聚焦人工智能、数据挖掘与可信机器学习。',
+    name: '吴洪',
+    role: 'Embodied AI x AgriTech Builder',
+    affiliation: '中国农业大学工学院 · 具身智能与农业机器人研究中心',
+    subtitle:
+      '农业智能装备本科生，围绕具身智能、农业机器人、RAG Agent 与计算机视觉做系统级项目落地。',
     description:
-      '这是一个已经可以直接上线的学术主页模板。你可以把姓名、单位、研究方向、论文、新闻和联系方式替换成自己的真实信息，无需改动页面结构。',
+      '我更关心把前沿模型真正接到真实世界里：让大模型可以驱动小车行动、让视觉模型能够理解田间表型、也让检索系统和 Agent 在具体场景中形成完整闭环。',
     about:
-      '我主要从事某某方向研究，关注某某问题及其在某某场景中的应用。当前工作围绕理论方法、系统设计与真实数据验证展开，欢迎学生申请、学术交流与跨学科合作。',
-    initials: 'YS',
-    focus: ['人工智能', '机器学习', '数据分析', '人机交互'],
+      '目前就读于中国农业大学农业智能装备专业，依托工学院具身智能与农业机器人研究中心开展研究与开发。我长期把精力放在“从模型到系统”的完整链路上，既做 Depth Pro、SAM、DINOv3、YOLO 等模型的接入与训练，也做 Linux 部署、RAG 架构、树莓派与移动平台联调，以及面向真实用户和真实环境的产品化实现。这个主页主要展示我近两年的代表项目。',
+    initials: 'WH',
+    focus: ['具身智能', '农业机器人', '计算机视觉', 'RAG Agent'],
     quickLinks: [
-      { label: 'Google Scholar', href: '#' },
+      { label: 'Projects', href: '#projects' },
       { label: 'GitHub', href: 'https://github.com/sanyueuy' },
-      { label: 'CV', href: '#' },
-      { label: 'Projects', href: '#projects' }
+      { label: 'Email', href: 'mailto:wuhong0324@gmail.com' }
     ],
     contactText:
-      '如果你对研究合作、学生培养、课程共建或项目申请感兴趣，欢迎通过邮箱或学术主页链接联系我。',
+      '如果你对具身智能、农业场景 Agent、农业机器人、视觉系统或合作项目感兴趣，欢迎通过邮箱或 GitHub 联系我。',
     contact: [
-      { label: 'Email', href: 'mailto:your-email@example.com' },
+      { label: 'Email', href: 'mailto:wuhong0324@gmail.com' },
       { label: 'GitHub', href: 'https://github.com/sanyueuy' },
-      { label: 'Scholar', href: '#' }
+      { label: 'MC Agent Video', href: 'https://www.bilibili.com/video/BV1vQXNBqEMc' }
     ]
   },
   research: [
     {
-      title: '研究主题一',
-      description: '用 1 至 2 句话介绍这个方向的核心问题、你的方法路线以及当前进展。'
+      title: '具身智能与农业机器人',
+      description:
+        '把云端大模型、边缘端树莓派设备、履带式移动平台与感知硬件接起来，构建可以移动、观测、决策和执行的农业场景智能体。'
     },
     {
-      title: '研究主题二',
-      description: '可以写你关注的应用场景、技术挑战，以及与现有工作的差异化价值。'
+      title: '农业视觉与玉米表型分析',
+      description:
+        '围绕玉米株高与结构化表型表示，探索 DINOv3、YOLO、SAM、Depth Pro 和可解释生物学先验在低成本高通量场景中的结合。'
     },
     {
-      title: '研究主题三',
-      description: '如果你有跨学科方向，这里适合放方法与应用的连接点。'
+      title: 'RAG Agent 与系统级产品化',
+      description:
+        '关注检索增强生成、工具调用、长期记忆、多轮执行和可用交互界面，让 Agent 在真实任务中形成稳定闭环。'
     }
   ],
   news: [
     {
       date: '2026.04',
-      text: '学术主页第一版上线，可继续补充个人资料、代表论文与新闻动态。'
+      text: '整理并发布个人项目主页，集中展示农业智能、Agent 与具身智能方向的代表成果。'
     },
     {
       date: '2026.03',
-      text: '在这里填写最近的论文录用、项目申请、报告邀请或获奖信息。'
+      text: '继续推进 DiffCorn-Fusion 论文写作与实验结果整理，当前可靠主结果为独立测试集 MAE = 0.99 cm。'
     },
     {
-      date: '2026.01',
-      text: '把时间线控制在 3 至 6 条，主页会更紧凑也更容易维护。'
+      date: '2025.04',
+      text: '启动 OpenClaw 与玉米育种支持大模型平台开发，围绕农业场景中的移动-观测-决策链路进行系统构建。'
     }
   ],
   projects: [
     {
-      title: '项目名称一：你的核心展示项目',
-      period: '2025 - Present',
-      summary:
-        '这里用 2 至 3 句话介绍项目目标、你负责的部分、技术亮点和实际效果。这个区域适合放最想展示给招生老师、合作方或访问者的项目。',
-      tags: ['多模态', '可视化', '系统实现'],
+      title: 'DiffCorn-Fusion',
+      period: '2025.01 - 至今',
+      summary: '高通量、低成本的玉米单视图表型检测与结构化表示方法。',
+      description:
+        '项目提出了一种面向田间与温室场景的 64D 玉米结构化表示，以 16 层 phytomer 建模玉米形态，并将 DINOv3 视觉特征、目标框提取与相机条件信息融合到端到端回归流程中。在亲自采集的中国农业大学温室数据上，模型参数量约 675k，独立测试集达到 MAE = 0.99 cm。',
+      tags: ['DINOv3', 'YOLO', 'Maize Phenotyping', '64D Representation'],
+      cover: {
+        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/dcf-%E5%B0%81%E9%9D%A2.jpg',
+        alt: 'DiffCorn-Fusion 封面图'
+      },
       links: [
-        { label: 'Project Page', href: '#' },
-        { label: 'GitHub', href: '#' }
+        {
+          label: 'Video',
+          href: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/dcf.mp4'
+        }
       ],
       media: [
         {
-          type: 'image',
-          src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
-          alt: '项目截图示例',
-          caption: '项目界面、系统架构图、实验结果图都可以放在这里。'
-        },
-        {
           type: 'video',
-          src: 'https://your-bucket.cos.ap-shanghai.myqcloud.com/demo/project-1.mp4',
-          poster: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
-          caption: '把这里替换成腾讯云 COS 的公开视频链接，浏览器会直接播放。'
+          src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/dcf.mp4',
+          poster:
+            'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/dcf-%E5%B0%81%E9%9D%A2.jpg',
+          caption: 'DCF 演示视频，展示玉米表型检测与结果输出。'
         }
       ]
     },
     {
-      title: '项目名称二：带图片与演示视频的成果页',
-      period: '2024 - 2025',
-      summary:
-        '第二个项目可以更偏工程或应用，展示真实场景、部署过程、用户交互视频或实验录像。',
-      tags: ['计算机视觉', '交互设计', '应用落地'],
+      title: '玉米育种 Agent',
+      period: '2025.01 - 至今',
+      summary: '把 Depth Pro、SAM、RAG 与育种知识结合起来的玉米智能分析 Agent。',
+      description:
+        '这个项目与 DCF 方法分开，重点是让 Agent 具备“看图理解、工具调用与知识推理”能力。我将 META 的 SAM、Apple 的 Depth Pro 封装成可调用工具，并结合育种知识库与 RAG 机制，让系统能够围绕玉米图像完成分析、辅助理解和决策支持。',
+      tags: ['Depth Pro', 'SAM', 'RAG', 'Function Tools'],
+      cover: {
+        src: './assets/projects/corn-agent/cover.png',
+        alt: '玉米育种 Agent 封面图'
+      },
       links: [
-        { label: 'Paper', href: '#' },
-        { label: 'Demo', href: '#' }
+        {
+          label: 'Video',
+          href: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/agentcron.mp4'
+        }
+      ],
+      media: [
+        {
+          type: 'video',
+          src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/agentcron.mp4',
+          poster: './assets/projects/corn-agent/cover.png',
+          caption: '玉米育种 Agent 演示视频，围绕图像理解、工具调用与知识支持展开。'
+        }
+      ]
+    },
+    {
+      title: 'MC Agent',
+      period: '2024.12 - 2025.06',
+      summary: '部署在 Linux 云服务器上的 Minecraft 智能管家，支持长期记忆与自然语言执行。',
+      description:
+        '我独立开发了基于 DeepSeek 与 RAG 的 Minecraft 服务器智能管理 Agent。底层通过 RCON 获取玩家坐标、生命值、手持物品和世界状态，知识层抓取原版与模组 Wiki 并用 BGE-M3 + FAISS 组织检索，决策层通过严格 JSON prompt 将自然语言请求转成可执行的游戏指令，并实现长短期记忆与游戏数据自动备份。',
+      tags: ['RCON', 'BGE-M3', 'FAISS', 'Game Agent'],
+      cover: {
+        src: './assets/projects/mc-agent/scene-1.png',
+        alt: 'MC Agent 截图'
+      },
+      links: [
+        { label: 'GitHub', href: 'https://github.com/sanyueuy/mc-ai-assistant' },
+        { label: 'Bilibili Video', href: 'https://www.bilibili.com/video/BV1vQXNBqEMc' }
       ],
       media: [
         {
           type: 'image',
-          src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-          alt: '项目图片示例',
-          caption: '建议每个项目放 1 至 3 张图，避免首页过长。'
+          src: './assets/projects/mc-agent/scene-1.png',
+          alt: 'MC Agent 与玩家交互截图 1',
+          caption: '支持用自然语言与 Agent 交互，并将请求翻译成服务器操作。'
+        },
+        {
+          type: 'image',
+          src: './assets/projects/mc-agent/scene-2.png',
+          alt: 'MC Agent 与玩家交互截图 2',
+          caption: '能够基于知识和当前状态给出具体、可执行的反馈。'
+        },
+        {
+          type: 'image',
+          src: './assets/projects/mc-agent/scene-3.png',
+          alt: 'MC Agent 与玩家交互截图 3',
+          caption: '演示 Agent 对复杂游戏机制、命令与实体管理的理解能力。'
+        },
+        {
+          type: 'external-video',
+          href: 'https://www.bilibili.com/video/BV1vQXNBqEMc',
+          poster: './assets/projects/mc-agent/scene-1.png',
+          caption: '完整演示视频托管在哔哩哔哩，点击封面跳转观看。'
+        }
+      ]
+    },
+    {
+      title: 'MentorDB',
+      period: '2025',
+      summary: '用自然语言找导师的检索系统，把“招生信息 + 主页证据 + 溯源卡片”做成完整工作流。',
+      description:
+        'MentorDB 关注的是高质量检索与可信结果呈现。系统根据研究方向、招生说明和公开主页证据，帮助用户快速筛选更适合的导师，并在结果页中展示命中证据、来源摘要、导师档案和可追溯来源，兼顾“可用性”和“可信度”。',
+      tags: ['Search UX', 'Evidence Retrieval', 'Source Tracing', 'LLM App'],
+      cover: {
+        src: './assets/projects/mentordb/search-home.png',
+        alt: 'MentorDB 首页'
+      },
+      links: [
+        { label: 'GitHub', href: 'https://github.com/sanyueuy/MentorDB' }
+      ],
+      media: [
+        {
+          type: 'image',
+          src: './assets/projects/mentordb/search-home.png',
+          alt: 'MentorDB 首页截图',
+          caption: '自然语言查询入口与多维筛选界面。'
+        },
+        {
+          type: 'image',
+          src: './assets/projects/mentordb/result-view.png',
+          alt: 'MentorDB 结果页截图',
+          caption: '结果页展示命中证据、标签与导师卡片。'
+        },
+        {
+          type: 'image',
+          src: './assets/projects/mentordb/profile-view.png',
+          alt: 'MentorDB 导师档案截图',
+          caption: '导师档案页提供可追溯来源与结构化信息。'
+        }
+      ]
+    },
+    {
+      title: 'OpenClaw 具身智能小车',
+      period: '2025.04 - 2026.04',
+      summary: '云端大模型与边缘端履带式小车协同工作的农业具身智能平台。',
+      description:
+        'OpenClaw 将云端大模型、树莓派、履带式底盘、二自由度云台和相机整合进一个具备“移动-观测-决策”闭环的系统。我为它引入 MCP 与 skill 机制，让小车能力可以被结构化调用，并支持可变拓扑设计，即使部分能力基座离线，整体服务依然能够继续运行。',
+      tags: ['Embodied AI', 'Raspberry Pi', 'MCP', 'Agricultural Robotics'],
+      cover: {
+        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
+        alt: 'OpenClaw 小车封面图'
+      },
+      links: [
+        {
+          label: 'Video',
+          href: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6.mp4'
+        }
+      ],
+      media: [
+        {
+          type: 'video',
+          src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6.mp4',
+          poster:
+            'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
+          caption: 'OpenClaw 演示视频，展示农业场景中的移动、观测与决策联动。'
         }
       ]
     }
   ],
   publications: [
     {
-      title: '论文标题示例：A Clear and Elegant Paper Title Goes Here',
-      venue: 'Journal / Conference, 2026',
-      authors: '你的姓名, 合作者 A, 合作者 B',
-      summary: '这里写一两句摘要式介绍，说明问题、方法和结果亮点。',
-      links: [
-        { label: 'Paper', href: '#' },
-        { label: 'Code', href: '#' },
-        { label: 'BibTeX', href: '#' }
-      ]
-    },
-    {
-      title: '论文标题示例：Another Representative Publication',
-      venue: 'Top Conference / Preprint, 2025',
-      authors: '你的姓名, 合作者 C, 合作者 D',
-      summary: '可以突出你的贡献，例如提出新模型、构建数据集或完成系统部署。',
-      links: [
-        { label: 'Paper', href: '#' },
-        { label: 'Slides', href: '#' }
-      ]
+      title:
+        'End-to-End Intelligent Maize Plant Height Estimation: A Geometry-Constrained Single View Metrology Framework',
+      venue: 'Information Processing in Agriculture 投稿中',
+      authors: '作者之一：吴洪（第三作者）',
+      summary:
+        '面向复杂大田环境下的玉米株高估计，结合单视图几何与深度学习感知，实现非接触式、高精度表型参数自动提取。',
+      links: []
     }
   ],
   experience: [
     {
-      title: '学校 / 机构名称',
-      period: '2022 - Present',
-      description: '职位、项目经历或研究方向简介。'
+      title: '中国农业大学 · 农业智能装备（理科试验班）',
+      period: '2023.09 - 至今',
+      description:
+        '工学院拔尖培养体系，本科阶段持续围绕具身智能、农业机器人、视觉系统与 Agent 产品进行研究和开发。'
     },
     {
-      title: '上一段教育 / 工作经历',
-      period: '2018 - 2022',
-      description: '学位、导师、研究主题或主要贡献。'
+      title: '工学院具身智能与农业机器人研究中心',
+      period: '科研经历',
+      description:
+        '在导师团队支持下开展具身智能平台、玉米育种支持大模型与视觉表型分析系统的系统研发。'
     }
   ],
   service: [
     {
-      title: '教学',
-      description: '课程名称、授课对象、课程建设或指导学生经历。'
+      title: '系统开发与部署',
+      description:
+        '擅长 Linux 部署、RAG 架构、前后端协同、云端服务与边缘设备联调，强调从模型到系统的完整落地。'
     },
     {
-      title: '学术服务',
-      description: '审稿、组织 workshop、担任 TA / mentor 或学术社群服务。'
+      title: '跨学科项目推进',
+      description:
+        '长期在 AI、机器人、农业场景和产品实现之间快速切换，偏好做高完成度、可演示、可上线的作品。'
     }
   ]
 };

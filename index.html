@@ -6,7 +6,7 @@
     <title>Academic Homepage</title>
     <meta
       name="description"
-      content="个人学术主页，展示研究方向、论文成果、教学与联系信息。"
+      content="吴洪的个人项目主页，展示具身智能、农业机器人、RAG Agent 与视觉系统相关项目。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,14 +20,14 @@
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="#top">
-          <span class="brand-mark">A</span>
-          <span id="brandName">Academic</span>
+          <span class="brand-mark">W</span>
+          <span id="brandName">吴洪</span>
         </a>
         <nav class="site-nav" aria-label="主导航">
+          <a href="#projects">项目</a>
           <a href="#about">简介</a>
           <a href="#research">研究</a>
           <a href="#publications">论文</a>
-          <a href="#experience">经历</a>
           <a href="#contact">联系</a>
         </nav>
       </header>
@@ -35,23 +35,21 @@
       <main id="top">
         <section class="hero card-grid">
           <div class="hero-copy card card-accent">
-            <p class="eyebrow" id="heroRole">Researcher</p>
-            <h1 id="heroName">你的姓名</h1>
-            <p class="hero-subtitle" id="heroSubtitle">
-              在这里写一句简洁而明确的研究定位，例如：关注人工智能、计算机视觉与人机交互。
-            </p>
+            <p class="eyebrow" id="heroRole">Embodied AI x AgriTech Builder</p>
+            <h1 id="heroName">吴洪</h1>
+            <p class="hero-subtitle" id="heroSubtitle"></p>
             <p class="hero-description" id="heroDescription"></p>
             <div class="hero-actions">
-              <a id="primaryLink" class="button primary" href="#contact">联系我</a>
-              <a id="secondaryLink" class="button ghost" href="#publications">查看论文</a>
+              <a id="primaryLink" class="button primary" href="#projects">查看项目</a>
+              <a id="secondaryLink" class="button ghost" href="https://github.com/sanyueuy">访问 GitHub</a>
             </div>
           </div>
 
           <aside class="hero-panel card">
-            <div class="avatar-badge" id="avatarBadge">YS</div>
+            <div class="avatar-badge" id="avatarBadge">WH</div>
             <div class="meta-block">
               <p class="meta-label">Affiliation</p>
-              <p class="meta-value" id="heroAffiliation">你的学院 / 实验室 / 学校</p>
+              <p class="meta-value" id="heroAffiliation"></p>
             </div>
             <div class="meta-block">
               <p class="meta-label">Focus</p>
@@ -62,6 +60,14 @@
               <div class="quick-links" id="quickLinks"></div>
             </div>
           </aside>
+        </section>
+
+        <section class="section-layout">
+          <div class="section-title">
+            <p class="eyebrow">Projects First</p>
+            <h2 id="projects">项目展示</h2>
+          </div>
+          <div class="project-list" id="projectList"></div>
         </section>
 
         <section class="section-layout">
@@ -93,16 +99,8 @@
 
         <section class="section-layout">
           <div class="section-title">
-            <p class="eyebrow">Projects</p>
-            <h2 id="projects">项目展示</h2>
-          </div>
-          <div class="project-list" id="projectList"></div>
-        </section>
-
-        <section class="section-layout">
-          <div class="section-title">
-            <p class="eyebrow">Selected Works</p>
-            <h2 id="publications">代表性论文</h2>
+            <p class="eyebrow">Publication</p>
+            <h2 id="publications">代表论文</h2>
           </div>
           <div class="publication-list" id="publicationList"></div>
         </section>
@@ -111,14 +109,14 @@
           <div>
             <div class="section-title">
               <p class="eyebrow">Experience</p>
-              <h2 id="experience">教育与工作经历</h2>
+              <h2 id="experience">教育与科研经历</h2>
             </div>
             <div class="timeline-list" id="experienceList"></div>
           </div>
           <div>
             <div class="section-title">
-              <p class="eyebrow">Service</p>
-              <h2>教学与服务</h2>
+              <p class="eyebrow">Strength</p>
+              <h2>能力与特点</h2>
             </div>
             <div class="stack-list" id="serviceList"></div>
           </div>
@@ -132,9 +130,7 @@
           <div class="card contact-card">
             <div>
               <p class="contact-heading">欢迎交流</p>
-              <p id="contactText">
-                如果你对研究合作、学生交流、课程建设或项目合作感兴趣，欢迎通过以下方式联系我。
-              </p>
+              <p id="contactText"></p>
             </div>
             <div class="contact-links" id="contactLinks"></div>
           </div>

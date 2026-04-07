@@ -12,12 +12,14 @@ window.siteData = {
     focus: ['具身智能', '农业机器人', '计算机视觉', 'RAG Agent'],
     quickLinks: [
       { label: 'Projects', href: '#projects' },
+      { label: '简历 PDF', href: './assets/docs/wuhong-cv.pdf' },
       { label: 'GitHub', href: 'https://github.com/sanyueuy' },
       { label: 'Email', href: 'mailto:wuhong0324@gmail.com' }
     ],
     contactText:
-      '如果你对具身智能、农业场景 Agent、农业机器人、视觉系统或合作项目感兴趣，欢迎通过邮箱或 GitHub 联系我。',
+      '如果您对我的研究兴趣、项目经历或未来研究计划感兴趣，欢迎通过邮箱与我联系交流。我也非常期待向相关方向的老师进一步学习。',
     contact: [
+      { label: '简历 PDF', href: './assets/docs/wuhong-cv.pdf' },
       { label: 'Email', href: 'mailto:wuhong0324@gmail.com' },
       { label: 'GitHub', href: 'https://github.com/sanyueuy' },
       { label: 'MC Agent Video', href: 'https://www.bilibili.com/video/BV1vQXNBqEMc' }

@@ -89,8 +89,7 @@ window.siteData = {
         {
           type: 'video',
           src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/%E6%9C%80%E7%BB%88%E7%89%88.mp4',
-          poster:
-            'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
+          poster: './assets/projects/openclaw/slam-red-bottle-cover.jpg',
           caption:
             'OpenClaw 演示：自定义 Skill 调用 SLAM 完成建图；红色瓶子搜索则基于独立的视觉检测链路，结合规划、决策执行、trial and error 调整和基础语音控制完成任务。'
         }

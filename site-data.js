@@ -62,7 +62,7 @@ window.siteData = {
       period: '2025.04 - 2026.04',
       summary: '云端大模型与边缘端履带式小车协同工作的农业具身智能平台。',
       description:
-        'OpenClaw 将云端大模型、树莓派、履带式底盘、二自由度云台和相机整合进一个具备“移动-观测-决策”闭环的系统。我为它引入 MCP 与 skill 机制，让小车能力可以被结构化调用，并支持可变拓扑设计，即使部分能力基座离线，整体服务依然能够继续运行。最新演示进一步展示了自定义 Skill 驱动的 SLAM 建图、红色瓶子目标检测、路径规划、决策执行、trial and error 调整，以及最基础的语音控制。',
+        'OpenClaw 将云端大模型、树莓派、履带式底盘、二自由度云台和相机整合进一个具备“移动-观测-决策”闭环的系统。我为它引入 MCP 与 skill 机制，让小车能力可以被结构化调用，并支持可变拓扑设计，即使部分能力基座离线，整体服务依然能够继续运行。最新演示展示了两类能力：一是通过自定义 Skill 调用 SLAM 完成环境建图；二是在不依赖 SLAM 的情况下搜索红色瓶子，并围绕视觉检测结果进行路径规划、决策执行、trial and error 调整和基础语音控制。',
       tags: ['Embodied AI', 'Raspberry Pi', 'MCP', 'Agricultural Robotics'],
       cover: {
         src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
@@ -92,7 +92,7 @@ window.siteData = {
           poster:
             'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
           caption:
-            'OpenClaw 自定义 Skill 演示：小车自主 SLAM 建图，在环境中搜索红色瓶子，并完成检测、规划、决策执行、trial and error 调整和基础语音控制。'
+            'OpenClaw 演示：自定义 Skill 调用 SLAM 完成建图；红色瓶子搜索则基于独立的视觉检测链路，结合规划、决策执行、trial and error 调整和基础语音控制完成任务。'
         }
       ]
     },

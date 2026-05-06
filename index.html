@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Serif+SC:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -20,106 +20,92 @@
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="#top">
-          <span class="brand-mark">W</span>
+          <span class="brand-mark">WH</span>
           <span id="brandName">吴洪</span>
         </a>
         <nav class="site-nav" aria-label="主导航">
-          <a href="#projects">项目</a>
-          <a href="#about">简介</a>
-          <a href="#research">研究</a>
-          <a href="#publications">论文</a>
-          <a href="#contact">联系</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Papers</a>
+          <a href="#background">Background</a>
+          <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <main id="top">
-        <section class="section-layout feature-layout">
-          <div class="feature-main">
-            <div class="section-title">
-              <p class="eyebrow">Projects First</p>
-              <h2 id="projects">项目展示</h2>
+        <section class="masthead">
+          <p class="eyebrow">Academic Homepage</p>
+          <div class="masthead-grid">
+            <div>
+              <h1 id="heroName">吴洪</h1>
+              <p class="masthead-role" id="heroRole"></p>
             </div>
-            <div class="project-list" id="projectList"></div>
+            <div class="masthead-copy">
+              <p class="masthead-affiliation" id="heroAffiliation"></p>
+              <p id="aboutText"></p>
+              <ul class="keyword-list" id="focusTags"></ul>
+              <div class="quick-links" id="quickLinks"></div>
+            </div>
           </div>
-          <aside class="feature-side">
-            <div class="section-title">
-              <p class="eyebrow">About</p>
-              <h2 id="about">个人简介</h2>
-            </div>
-            <div class="card intro-card">
-              <h1 class="intro-name" id="heroName">吴洪</h1>
-              <div class="meta-block">
-                <p class="meta-label">Affiliation</p>
-                <p class="meta-value" id="heroAffiliation"></p>
-              </div>
-              <div class="meta-block">
-                <p class="meta-label">About</p>
-                <p id="aboutText"></p>
-              </div>
-              <div class="meta-block">
-                <p class="meta-label">Focus</p>
-                <ul class="tag-list" id="focusTags"></ul>
-              </div>
-              <div class="meta-block">
-                <p class="meta-label">Quick Links</p>
-                <div class="quick-links" id="quickLinks"></div>
-              </div>
-            </div>
-          </aside>
         </section>
 
-        <section class="section-layout two-column">
+        <section class="section-block project-section">
+          <div class="section-title" data-section="01">
+            <p class="eyebrow">Selected Work</p>
+            <h2 id="projects" data-section="01">项目档案</h2>
+          </div>
+          <div class="project-list" id="projectList"></div>
+        </section>
+
+        <section class="section-block split-section">
           <div>
-            <div class="section-title">
+            <div class="section-title" data-section="02">
               <p class="eyebrow">Research</p>
-              <h2 id="research">研究方向</h2>
+              <h2 id="research" data-section="02">研究方向</h2>
             </div>
             <div class="stack-list" id="researchList"></div>
           </div>
           <div>
-            <div class="section-title">
+            <div class="section-title" data-section="03">
               <p class="eyebrow">News</p>
-              <h2>近期动态</h2>
+              <h2 data-section="03">近期动态</h2>
             </div>
             <div class="timeline-list" id="newsList"></div>
           </div>
         </section>
 
-        <section class="section-layout">
-          <div class="section-title">
+        <section class="section-block">
+          <div class="section-title" data-section="04">
             <p class="eyebrow">Publication</p>
-            <h2 id="publications">代表论文</h2>
+            <h2 id="publications" data-section="04">代表论文</h2>
           </div>
           <div class="publication-list" id="publicationList"></div>
         </section>
 
-        <section class="section-layout two-column">
+        <section class="section-block split-section" id="background">
           <div>
-            <div class="section-title">
-              <p class="eyebrow">Experience</p>
-              <h2 id="experience">教育与科研经历</h2>
+            <div class="section-title" data-section="05">
+              <p class="eyebrow">Background</p>
+              <h2 data-section="05">教育与科研经历</h2>
             </div>
             <div class="timeline-list" id="experienceList"></div>
           </div>
           <div>
-            <div class="section-title">
-              <p class="eyebrow">Strength</p>
-              <h2>能力与特点</h2>
+            <div class="section-title" data-section="06">
+              <p class="eyebrow">Practice</p>
+              <h2 data-section="06">能力与特点</h2>
             </div>
             <div class="stack-list" id="serviceList"></div>
           </div>
         </section>
 
-        <section class="section-layout contact-section">
-          <div class="section-title">
+        <section class="section-block contact-section">
+          <div class="section-title" data-section="07">
             <p class="eyebrow">Contact</p>
-            <h2 id="contact">联系与合作</h2>
+            <h2 id="contact" data-section="07">联系与合作</h2>
           </div>
-          <div class="card contact-card">
-            <div>
-              <p class="contact-heading">欢迎联系</p>
-              <p id="contactText"></p>
-            </div>
+          <div class="contact-panel">
+            <p id="contactText"></p>
             <div class="contact-links" id="contactLinks"></div>
           </div>
         </section>

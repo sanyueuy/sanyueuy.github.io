@@ -2,7 +2,7 @@ const data = window.siteData;
 
 const setText = (id, value) => {
   const el = document.getElementById(id);
-  if (el) el.textContent = value;
+  if (el) el.textContent = value || '';
 };
 
 const escapeHtml = (value = '') =>
@@ -13,72 +13,115 @@ const escapeHtml = (value = '') =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
 
+const isInternalLink = (href = '') => href.startsWith('#') || href.startsWith('./');
+
 const renderList = (id, items, renderItem) => {
   const root = document.getElementById(id);
   if (!root) return;
   root.innerHTML = items.map(renderItem).join('');
 };
 
-const renderProjectMedia = (mediaItems, title) =>
-  mediaItems
-    .map((media) => {
-      if (media.type === 'video') {
-        return `
-          <figure class="media-card media-card-video">
-            <button
-              class="media-expand"
-              type="button"
-              data-kind="video"
-              data-src="${escapeHtml(media.src)}"
-              data-poster="${escapeHtml(media.poster || '')}"
-              data-caption="${escapeHtml(media.caption || '')}"
-              aria-label="放大查看视频"
-            >
-              放大
-            </button>
-            <video controls preload="metadata" playsinline poster="${escapeHtml(media.poster || '')}">
-              <source src="${escapeHtml(media.src)}" type="video/mp4" />
-              你的浏览器暂不支持视频播放。
-            </video>
-            <figcaption class="media-caption">${escapeHtml(media.caption || '')}</figcaption>
-          </figure>
-        `;
-      }
+const mediaImage = (media, fallback = '') => media.poster || media.src || fallback;
 
-      if (media.type === 'external-video') {
-        return `
-          <a class="media-card media-card-link" href="${escapeHtml(media.href)}" target="_blank" rel="noreferrer">
-            <img src="${escapeHtml(media.poster)}" alt="${escapeHtml(title)} 视频封面" loading="lazy" />
-            <span class="media-badge">外部视频</span>
-            <span class="media-caption">${escapeHtml(media.caption || '')}</span>
-          </a>
-        `;
-      }
+const mediaAlt = (media, title) => media.alt || `${title} ${media.label || 'media'}`;
 
-      return `
-        <figure class="media-card">
-          <button
-            class="media-expand"
-            type="button"
-            data-kind="image"
-            data-src="${escapeHtml(media.src)}"
-            data-alt="${escapeHtml(media.alt || title)}"
-            data-caption="${escapeHtml(media.caption || '')}"
-            aria-label="放大查看图片"
-          >
-            放大
-          </button>
-          <img src="${escapeHtml(media.src)}" alt="${escapeHtml(media.alt || title)}" loading="lazy" />
-          <figcaption class="media-caption">${escapeHtml(media.caption || '')}</figcaption>
-        </figure>
-      `;
-    })
-    .join('');
+const renderMediaTrigger = (media, projectTitle, className) => {
+  const image = mediaImage(media);
+  const label = media.label || (media.type === 'video' ? 'Video' : 'Media');
+  const title = media.title || projectTitle;
+  const caption = media.caption || '';
+  const loading = 'eager';
+
+  if (media.type === 'external-video') {
+    return `
+      <a class="${className} media-trigger-link" href="${escapeHtml(media.href)}" target="_blank" rel="noreferrer">
+        <img src="${escapeHtml(image)}" alt="${escapeHtml(mediaAlt(media, projectTitle))}" loading="${loading}" />
+        <span class="media-kind">${escapeHtml(label)}</span>
+        <span class="media-trigger-title">${escapeHtml(title)}</span>
+      </a>
+    `;
+  }
+
+  const kind = media.type === 'video' ? 'video' : 'image';
+  const src = media.type === 'video' ? media.src : image;
+
+  return `
+    <button
+      class="${className} media-trigger"
+      type="button"
+      data-kind="${escapeHtml(kind)}"
+      data-src="${escapeHtml(src)}"
+      data-poster="${escapeHtml(media.poster || '')}"
+      data-alt="${escapeHtml(mediaAlt(media, projectTitle))}"
+      data-caption="${escapeHtml(caption)}"
+      aria-label="查看 ${escapeHtml(title)}"
+    >
+      <img src="${escapeHtml(image)}" alt="${escapeHtml(mediaAlt(media, projectTitle))}" loading="${loading}" />
+      <span class="media-kind">${escapeHtml(label)}</span>
+      <span class="media-trigger-title">${escapeHtml(title)}</span>
+      <span class="media-play">${media.type === 'video' ? 'Play' : 'View'}</span>
+    </button>
+  `;
+};
+
+const renderProject = (item, index) => {
+  const heroMedia = item.heroMedia || item.media?.[0] || {
+    type: 'image',
+    src: item.cover?.src,
+    alt: item.cover?.alt,
+    title: item.title
+  };
+  const secondaryMedia = item.secondaryMedia ?? item.media?.slice(1) ?? [];
+  const ordinal = String(index + 1).padStart(2, '0');
+
+  return `
+    <article class="project-record">
+      <div class="project-record-copy">
+        <div class="record-meta">
+          <span>${ordinal}</span>
+          <span>${escapeHtml(item.period)}</span>
+        </div>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p class="project-summary-line">${escapeHtml(item.summary)}</p>
+        <p class="project-description">${escapeHtml(item.description)}</p>
+        <ul class="project-highlights">
+          ${(item.highlights || []).map((point) => `<li>${escapeHtml(point)}</li>`).join('')}
+        </ul>
+        <div class="project-tags">
+          ${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}
+        </div>
+        <div class="project-links">
+          ${item.links
+            .map(
+              (link) =>
+                `<a href="${escapeHtml(link.href)}" ${
+                  isInternalLink(link.href) ? '' : 'target="_blank" rel="noreferrer"'
+                }>${escapeHtml(link.label)}</a>`
+            )
+            .join('')}
+        </div>
+      </div>
+      <div class="project-record-media">
+        ${renderMediaTrigger(heroMedia, item.title, 'hero-media')}
+        ${
+          secondaryMedia.length
+            ? `<div class="secondary-media-list">
+                ${secondaryMedia
+                  .map((media) => renderMediaTrigger(media, item.title, 'secondary-media-item'))
+                  .join('')}
+              </div>`
+            : ''
+        }
+      </div>
+    </article>
+  `;
+};
 
 setText('brandName', data.profile.name);
 setText('heroName', data.profile.name);
+setText('heroRole', data.profile.role);
 setText('heroAffiliation', data.profile.affiliation);
-setText('aboutText', data.profile.about);
+setText('aboutText', data.profile.subtitle || data.profile.about);
 setText('contactText', data.profile.contactText);
 
 document.title = `${data.profile.name} | Academic Homepage`;
@@ -88,14 +131,19 @@ renderList('focusTags', data.profile.focus, (item) => `<li>${escapeHtml(item)}</
 renderList(
   'quickLinks',
   data.profile.quickLinks,
-  (item) => `<a href="${escapeHtml(item.href)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)}</a>`
+  (item) =>
+    `<a href="${escapeHtml(item.href)}" ${
+      isInternalLink(item.href) ? '' : 'target="_blank" rel="noreferrer"'
+    }>${escapeHtml(item.label)}</a>`
 );
+
+renderList('projectList', data.projects, renderProject);
 
 renderList(
   'researchList',
   data.research,
   (item) => `
-    <article class="stack-item">
+    <article class="info-item">
       <h3>${escapeHtml(item.title)}</h3>
       <p>${escapeHtml(item.description)}</p>
     </article>
@@ -106,45 +154,9 @@ renderList(
   'newsList',
   data.news,
   (item) => `
-    <article class="timeline-item">
+    <article class="info-item timeline-item">
       <p class="item-meta">${escapeHtml(item.date)}</p>
       <p>${escapeHtml(item.text)}</p>
-    </article>
-  `
-);
-
-renderList(
-  'projectList',
-  data.projects,
-  (item) => `
-    <article class="project-item">
-      <div class="project-hero">
-        <div class="project-copy">
-          <div class="project-head">
-            <h3>${escapeHtml(item.title)}</h3>
-            <p class="item-meta">${escapeHtml(item.period)}</p>
-          </div>
-          <p class="project-summary-line">${escapeHtml(item.summary)}</p>
-          <p>${escapeHtml(item.description)}</p>
-          <div class="project-tags">
-            ${item.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}
-          </div>
-          <div class="project-links">
-            ${item.links
-              .map(
-                (link) =>
-                  `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`
-              )
-              .join('')}
-          </div>
-        </div>
-        <div class="project-cover-wrap">
-          <img class="project-cover" src="${escapeHtml(item.cover.src)}" alt="${escapeHtml(item.cover.alt)}" loading="lazy" />
-        </div>
-      </div>
-      <div class="media-grid ${item.media.length === 1 ? 'media-grid-single' : ''}">
-        ${renderProjectMedia(item.media, item.title)}
-      </div>
     </article>
   `
 );
@@ -158,12 +170,16 @@ renderList(
       <h3>${escapeHtml(item.title)}</h3>
       <p>${escapeHtml(item.authors)}</p>
       <p>${escapeHtml(item.summary)}</p>
-      ${item.links.length ? `<div class="paper-links">${item.links
-        .map(
-          (link) =>
-            `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`
-        )
-        .join('')}</div>` : ''}
+      ${
+        item.links.length
+          ? `<div class="paper-links">${item.links
+              .map(
+                (link) =>
+                  `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`
+              )
+              .join('')}</div>`
+          : ''
+      }
     </article>
   `
 );
@@ -172,7 +188,7 @@ renderList(
   'experienceList',
   data.experience,
   (item) => `
-    <article class="timeline-item">
+    <article class="info-item timeline-item">
       <p class="item-meta">${escapeHtml(item.period)}</p>
       <h3>${escapeHtml(item.title)}</h3>
       <p>${escapeHtml(item.description)}</p>
@@ -184,7 +200,7 @@ renderList(
   'serviceList',
   data.service,
   (item) => `
-    <article class="stack-item">
+    <article class="info-item">
       <h3>${escapeHtml(item.title)}</h3>
       <p>${escapeHtml(item.description)}</p>
     </article>
@@ -238,7 +254,7 @@ const openLightbox = (button) => {
     lightboxImage.removeAttribute('alt');
     lightboxVideo.hidden = false;
     lightboxVideo.poster = button.dataset.poster || '';
-    lightboxVideo.innerHTML = `<source src="${src}" type="video/mp4" />`;
+    lightboxVideo.innerHTML = `<source src="${escapeHtml(src)}" type="video/mp4" />`;
     lightboxVideo.load();
     return;
   }
@@ -255,9 +271,9 @@ const openLightbox = (button) => {
 };
 
 document.addEventListener('click', (event) => {
-  const expandButton = event.target.closest('.media-expand');
-  if (expandButton) {
-    openLightbox(expandButton);
+  const trigger = event.target.closest('.media-trigger');
+  if (trigger) {
+    openLightbox(trigger);
     return;
   }
 

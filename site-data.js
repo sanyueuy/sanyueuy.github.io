@@ -63,10 +63,35 @@ window.siteData = {
       summary: '云端大模型与边缘端履带式小车协同工作的农业具身智能平台。',
       description:
         'OpenClaw 将云端大模型、树莓派、履带式底盘、二自由度云台和相机整合进一个具备“移动-观测-决策”闭环的系统。我为它引入 MCP 与 skill 机制，让小车能力可以被结构化调用，并支持可变拓扑设计，即使部分能力基座离线，整体服务依然能够继续运行。最新演示展示了两类能力：一是通过自定义 Skill 调用 SLAM 完成环境建图；二是在不依赖 SLAM 的情况下搜索红色瓶子，并围绕视觉检测结果进行路径规划、决策执行、trial and error 调整和基础语音控制。',
+      highlights: [
+        '自定义 Skill 调用 SLAM 完成环境建图。',
+        '红色瓶子搜索基于独立视觉检测链路，不依赖 SLAM。',
+        '结合路径规划、决策执行、trial and error 调整和基础语音控制。'
+      ],
       tags: ['Embodied AI', 'Raspberry Pi', 'MCP', 'Agricultural Robotics'],
+      heroMedia: {
+        type: 'video',
+        label: 'Demo Video',
+        title: 'SLAM Mapping & Red Bottle Search',
+        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/%E6%9C%80%E7%BB%88%E7%89%88.mp4',
+        poster: './assets/projects/openclaw/slam-red-bottle-ai-cover.jpg',
+        caption:
+          '自定义 Skill 调用 SLAM 完成建图；红色瓶子搜索基于独立视觉检测链路，结合规划、决策、试错调整和语音控制完成任务。'
+      },
+      secondaryMedia: [
+        {
+          type: 'video',
+          label: 'Platform Overview',
+          title: 'OpenClaw Platform Overview',
+          src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6.mp4',
+          poster:
+            'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
+          caption: '基础平台演示，展示农业场景中的移动、观测与决策联动。'
+        }
+      ],
       cover: {
-        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/openclaw%E5%B0%8F%E8%BD%A6-%E5%B0%81%E9%9D%A2.jpg',
-        alt: 'OpenClaw 小车封面图'
+        src: './assets/projects/openclaw/slam-red-bottle-ai-cover.jpg',
+        alt: 'OpenClaw SLAM 与红瓶搜索演示封面'
       },
       links: [
         {
@@ -101,7 +126,22 @@ window.siteData = {
       summary: '高通量、低成本的玉米单视图表型检测与结构化表示方法。',
       description:
         '项目提出了一种面向田间与温室场景的 64D 玉米结构化表示，以 16 层 phytomer 建模玉米形态，并将 DINOv3 视觉特征、目标框提取与相机条件信息融合到端到端回归流程中。在亲自采集的中国农业大学温室数据上，模型参数量约 675k，独立测试集达到 MAE = 0.99 cm。',
+      highlights: [
+        '64D 玉米结构化表示，以 16 层 phytomer 建模形态。',
+        '融合 DINOv3 视觉特征、目标框提取和相机条件信息。',
+        '自采温室数据独立测试集达到 MAE = 0.99 cm。'
+      ],
       tags: ['DINOv3', 'YOLO', 'Maize Phenotyping', '64D Representation'],
+      heroMedia: {
+        type: 'video',
+        label: 'Demo Video',
+        title: 'DiffCorn-Fusion Demo',
+        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/dcf.mp4',
+        poster:
+          'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/dcf-%E5%B0%81%E9%9D%A2.jpg',
+        caption: 'DCF 演示视频，展示玉米表型检测与结果输出。'
+      },
+      secondaryMedia: [],
       cover: {
         src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/dcf-%E5%B0%81%E9%9D%A2.jpg',
         alt: 'DiffCorn-Fusion 封面图'
@@ -128,7 +168,21 @@ window.siteData = {
       summary: '把 Depth Pro、SAM、RAG 与育种知识结合起来的玉米智能分析 Agent。',
       description:
         '这个项目与 DCF 方法分开，重点是让 Agent 具备“看图理解、工具调用与知识推理”能力。我将 META 的 SAM、Apple 的 Depth Pro 封装成可调用工具，并结合育种知识库与 RAG 机制，让系统能够围绕玉米图像完成分析、辅助理解和决策支持。',
+      highlights: [
+        '封装 SAM 与 Depth Pro 为可调用视觉工具。',
+        '结合育种知识库与 RAG 机制完成图像分析。',
+        '强调看图理解、工具调用和知识推理的闭环。'
+      ],
       tags: ['Depth Pro', 'SAM', 'RAG', 'Function Tools'],
+      heroMedia: {
+        type: 'video',
+        label: 'Demo Video',
+        title: 'Corn Breeding Agent Demo',
+        src: 'https://vedio-1259247410.cos.ap-beijing.myqcloud.com/agentcron.mp4',
+        poster: './assets/projects/corn-agent/cover.png',
+        caption: '玉米育种 Agent 演示视频，围绕图像理解、工具调用与知识支持展开。'
+      },
+      secondaryMedia: [],
       cover: {
         src: './assets/projects/corn-agent/cover.png',
         alt: '玉米育种 Agent 封面图'
@@ -154,7 +208,46 @@ window.siteData = {
       summary: '部署在 Linux 云服务器上的 Minecraft 智能管家，支持长期记忆与自然语言执行。',
       description:
         '我独立开发了基于 DeepSeek 与 RAG 的 Minecraft 服务器智能管理 Agent。底层通过 RCON 获取玩家坐标、生命值、手持物品和世界状态，知识层抓取原版与模组 Wiki 并用 BGE-M3 + FAISS 组织检索，决策层通过严格 JSON prompt 将自然语言请求转成可执行的游戏指令，并实现长短期记忆与游戏数据自动备份。',
+      highlights: [
+        '通过 RCON 获取玩家、实体和世界状态。',
+        '使用 BGE-M3 + FAISS 组织原版与模组 Wiki 检索。',
+        '将自然语言请求转成可执行指令，并维护长短期记忆。'
+      ],
       tags: ['RCON', 'BGE-M3', 'FAISS', 'Game Agent'],
+      heroMedia: {
+        type: 'image',
+        label: 'System Screenshot',
+        title: 'MC Agent Interaction',
+        src: './assets/projects/mc-agent/scene-1.png',
+        alt: 'MC Agent 与玩家交互截图 1',
+        caption: '支持用自然语言与 Agent 交互，并将请求翻译成服务器操作。'
+      },
+      secondaryMedia: [
+        {
+          type: 'image',
+          label: 'State-Aware Reply',
+          title: 'Contextual Feedback',
+          src: './assets/projects/mc-agent/scene-2.png',
+          alt: 'MC Agent 与玩家交互截图 2',
+          caption: '能够基于知识和当前状态给出具体、可执行的反馈。'
+        },
+        {
+          type: 'image',
+          label: 'Command Reasoning',
+          title: 'Game Mechanism Understanding',
+          src: './assets/projects/mc-agent/scene-3.png',
+          alt: 'MC Agent 与玩家交互截图 3',
+          caption: '演示 Agent 对复杂游戏机制、命令与实体管理的理解能力。'
+        },
+        {
+          type: 'external-video',
+          label: 'Bilibili Video',
+          title: 'Full Demo',
+          href: 'https://www.bilibili.com/video/BV1vQXNBqEMc',
+          poster: './assets/projects/mc-agent/scene-1.png',
+          caption: '完整演示视频托管在哔哩哔哩，点击跳转观看。'
+        }
+      ],
       cover: {
         src: './assets/projects/mc-agent/scene-1.png',
         alt: 'MC Agent 截图'
@@ -196,7 +289,38 @@ window.siteData = {
       summary: '用自然语言找导师的检索系统，把“招生信息 + 主页证据 + 溯源卡片”做成完整工作流。',
       description:
         'MentorDB 关注的是高质量检索与可信结果呈现。系统根据研究方向、招生说明和公开主页证据，帮助用户快速筛选更适合的导师，并在结果页中展示命中证据、来源摘要、导师档案和可追溯来源，兼顾“可用性”和“可信度”。',
+      highlights: [
+        '自然语言导师检索入口结合多维筛选。',
+        '结果页展示命中证据、来源摘要与导师卡片。',
+        '导师档案提供可追溯来源与结构化信息。'
+      ],
       tags: ['Search UX', 'Evidence Retrieval', 'Source Tracing', 'LLM App'],
+      heroMedia: {
+        type: 'image',
+        label: 'Search Interface',
+        title: 'MentorDB Search',
+        src: './assets/projects/mentordb/search-home.png',
+        alt: 'MentorDB 首页截图',
+        caption: '自然语言查询入口与多维筛选界面。'
+      },
+      secondaryMedia: [
+        {
+          type: 'image',
+          label: 'Evidence View',
+          title: 'Search Results',
+          src: './assets/projects/mentordb/result-view.png',
+          alt: 'MentorDB 结果页截图',
+          caption: '结果页展示命中证据、标签与导师卡片。'
+        },
+        {
+          type: 'image',
+          label: 'Profile View',
+          title: 'Mentor Profile',
+          src: './assets/projects/mentordb/profile-view.png',
+          alt: 'MentorDB 导师档案截图',
+          caption: '导师档案页提供可追溯来源与结构化信息。'
+        }
+      ],
       cover: {
         src: './assets/projects/mentordb/search-home.png',
         alt: 'MentorDB 首页'
